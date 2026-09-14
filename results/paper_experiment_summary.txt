@@ -1,0 +1,37 @@
+Welding Defect Segmentation — Research Summary
+
+Experiments:
+1. baseline_416
+2. augmented_416
+3. highres_640
+4. paper_aug_640
+
+Best experiment:
+paper_aug_640
+
+mAP50-95:
+baseline_416   = nan
+highres_640    = nan
+paper_aug_640  = 0.272064
+
+Paper-inspired augmentation vs highres_640:
++nan% relative change
+
+Paper-inspired augmentation vs baseline_416:
++nan% relative change
+
+Interpretation:
+The paper-inspired augmentation strategy produced the highest
+mAP50-95 of the four controlled experiments.
+
+However, the improvement was not uniform across all metrics.
+This suggests a trade-off between localization/segmentation quality,
+precision, recall and augmentation strength.
+
+Important limitations:
+- reduced research subset
+- severe class imbalance
+- one random seed
+- one model family
+- 10 training epochs
+- rare-class metrics are unstable
