@@ -1,0 +1,44 @@
+Welding Defect Segmentation — Research Summary
+
+Research question:
+How do controlled data augmentation and input image resolution affect
+YOLOv8n-seg performance for welding-defect segmentation on radiographic images?
+
+Protocol:
+- seed: 42
+- same fixed train/validation subset
+- model family: YOLOv8n-seg
+- 10 epochs per experiment
+- offline metrics: Precision, Recall, mAP50, mAP50-95, inference time
+
+Final results:
+baseline_416:
+  precision = 0.3815
+  recall = 0.2857
+  mAP50 = 0.2586
+  mAP50-95 = 0.2334
+  inference = 20.18 ms/image
+
+augmented_416:
+  precision = 0.2469
+  recall = 0.2773
+  mAP50 = 0.2739
+  mAP50-95 = 0.2479
+  inference = 19.74 ms/image
+
+highres_640:
+  precision = 0.4306
+  recall = 0.3112
+  mAP50 = 0.2963
+  mAP50-95 = 0.2655
+  inference = 27.08 ms/image
+
+Best experiment:
+highres_640 by validation mAP50-95.
+
+Main conclusion:
+Higher input resolution improved segmentation quality but increased inference cost.
+
+Important limitation:
+The reduced validation subset is strongly class-imbalanced and some rare
+classes contain only one or two validation instances.

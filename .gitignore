@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datasets
+data/
+data_kaggle/
+data_small/
+*.zip
+
+# Model weights / checkpoints
+*.pt
+*.pth
+*.onnx
+
+# Ultralytics generated training artifacts
+runs/
+
+# Large raw artifacts
+wandb/
+
+# Secrets
+.env
+kaggle.json
